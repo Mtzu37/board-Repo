@@ -4,7 +4,7 @@ dotenv.config()
 module.exports = {
   port: process.env.PORT || 1337,
   db: {
-    database: process.env.DB_NAME || 'project_v',
+    database: process.env.DB_NAME || 'board_db',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASS || '',
     options: {
