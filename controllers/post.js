@@ -5,6 +5,34 @@ const {
   const Sequelize = require('sequelize')
   const bcrypt = require("bcrypt-nodejs");
 
+  const show = async (req, res) => {
+    console.log('Get')
+    Post.findAll({
+      attributes: [
+        'id',
+        "tag",
+        "title",
+        "shortText",
+        "linkBanner",
+        "dateOfPosting"
+      ],
+      include: [{
+          model: User,
+          as: 'user',
+          // where: { },
+          attributes: ["id",'userName'],
+          through: {
+            attributes: []
+          }
+        }
+      ]
+    }).then(post => {
+      res.send(post);
+    });
+  
+  }
+
+
   const login = async (req, res) => {
     const {email, password} = req.body;
 
@@ -146,12 +174,12 @@ const {
         level: 'public'
       }
     },
-    // '/viewAllPost': {
-    //     get: {
-    //         action: findUser,
-    //         level: 'public'
-    //       }
-    // },
+    '/viewAllPost': {
+        get: {
+            action: show,
+            level: 'public'
+          }
+    },
     // '/viewTag/:tag': {
     //     get: {
     //         action: findUser,

@@ -25,6 +25,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false
       },
+      linkBanner: {
+        type: DataTypes.STRING,
+      },
+      link1: {
+        type: DataTypes.STRING,
+      },
+      link2: {
+        type: DataTypes.STRING,
+      },
+      link3: {
+        type: DataTypes.STRING,
+      },
       text: {
         type: DataTypes.TEXT,
         allowNull: false
