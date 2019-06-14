@@ -2,7 +2,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 module.exports = {
-  port: process.env.PORT || 1337,
+  port: 1337,
   db: {
     database: process.env.DB_NAME || 'heroku_ba9289c47662677',
     user: process.env.DB_USER || 'b7587e587674a8',
