@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
     //     as: 'technologies',
     //     foreignKey: 'candidateId'
     //   });
-    //   Candidate.belongsToMany(models.Company, {
+    // /  Candidate.belongsToMany(models.Company, {
     //     through: models.CandidateCompany,
     //     as: 'companies',
     //     foreignKey: 'candidateId'
