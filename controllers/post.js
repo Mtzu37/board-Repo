@@ -64,6 +64,10 @@ const {
             title,
             shortText,
             text,
+            linkBanner,
+            link1,
+            link2,
+            link3
 
         } = req.body;
         console.log("CANDIDATE:", req.body);
@@ -90,6 +94,10 @@ const {
                 text: text,
                 views:0,
                 likes: 0,
+                linkBanner: linkBanner,
+                link1:link1,
+                link2:link2,
+                link3:link3,
                 dateOfPosting: new Date(),
             }).then(createdPost => {
                 userFound.addPost(createdPost);
