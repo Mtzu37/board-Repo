@@ -14,7 +14,11 @@ const {
         "title",
         "shortText",
         "linkBanner",
-        "dateOfPosting"
+        "dateOfPosting",
+        "text",
+        "link1",
+        "link2",
+        "link3"
       ],
       include: [{
           model: User,
