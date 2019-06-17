@@ -16,9 +16,8 @@ const {
         "linkBanner",
         "dateOfPosting",
         "text",
-        "link1",
-        "link2",
-        "link3"
+        "linkVideo",
+   
       ],
       include: [{
           model: User,
@@ -99,9 +98,7 @@ const {
                 views:0,
                 likes: 0,
                 linkBanner: linkBanner,
-                link1:link1,
-                link2:link2,
-                link3:link3,
+                linkVideo:linkVideo,
                 dateOfPosting: new Date(),
             }).then(createdPost => {
                 userFound.addPost(createdPost);
