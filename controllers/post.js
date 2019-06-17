@@ -57,7 +57,11 @@ const {
        } else{
             res.status(400).send("failed login");
        }
-    });
+    }) .catch = (err)=> {
+        res.status(400).json({
+          error: err
+        })
+      };
   }
   
   const addPost = async (req, res) => {
