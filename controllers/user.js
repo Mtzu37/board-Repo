@@ -18,7 +18,11 @@ const {
       ]
 
     }).then(user => {
-       let flag = bcrypt.compareSync(password, user.passHash);
+       let flag = false;
+      console.log("USER", user);
+      if(user !== null){
+        flag = bcrypt.compareSync(password, user.passHash);
+      } 
 
        if(flag){
             res.status(200).send({id: user.id});

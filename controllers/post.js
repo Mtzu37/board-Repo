@@ -36,37 +36,7 @@ const {
   }
 
 
-  const login = async (req, res) => {
-    const {email, password} = req.body;
 
-    await User.findOne({
-      where: {
-        email: email
-      },
-      attributes: [
-        "id",
-        "email",
-        "passHash",
-      ]
-
-    }).then(user => {
-      var flag = false;
-      console.log("USER", user);
-      if(user === null){
-        res.status(400).send("failed login");
-      } else {
-        flag = bcrypt.compareSync(password, user.passHash);
-      }
-
-       if(flag){
-            res.status(200).send({id: user.id});
-       } else{
-            res.status(400).send("failed login");
-       }
-    }) .catch( err=> {
-        res.status(400).send("failed login");
-      });
-  }
   
   const addPost = async (req, res) => {
     try {
@@ -143,41 +113,7 @@ const {
     });
   }
   
-  const reg = async (req, res) => {
-    try {
-        console.log(req.body);
-        const { 
-            email,
-            userName,
-            passHash,
-            firstName,
-            lastName,
-            location
-        } = req.body;
-        
-        const newUser = await User.create({
-            email: email,
-            userName: userName,
-            passHash: bcrypt.hashSync(passHash),
-            firstName: firstName,
-            lastName: lastName,
-            location: location,
-            msgNr:0,
-            postNr: 0,
-            profileViews:0,
-            lastSeenOn: new Date(),
-            registrationDate: new Date()
-        });
-        res.status(200).send("register successful");
-        
-      } catch (err) {
-        res.status(400).json({
-          error: err
-        });
-      }
-       
-    
-  }
+
   
  
   
