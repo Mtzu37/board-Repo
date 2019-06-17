@@ -68,10 +68,7 @@ const {
             shortText,
             text,
             linkBanner,
-            link1,
-            link2,
-            link3
-
+            linkVideo
         } = req.body;
         console.log("CANDIDATE:", req.body);
         // if (firstName === undefined || lastName === undefined || firstName === '' || lastName === '') {
