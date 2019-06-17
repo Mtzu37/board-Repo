@@ -52,11 +52,10 @@ const {
     }).then(user => {
       var flag = false;
       console.log("USER", user);
-      if(user !== null && user !== undefined ){
-        flag = bcrypt.compareSync(password, user.passHash);
-
-      } else {
+      if(user === null){
         res.status(400).send("failed login");
+      } else {
+        flag = bcrypt.compareSync(password, user.passHash);
       }
 
        if(flag){
