@@ -51,7 +51,7 @@ const {
 
     }).then(user => {
       let flag = false;
-      if(user.passHash !== null || user.passHash !== undefined )
+      if(user !== null || user !== undefined || user.passHash !== null )
         flag = bcrypt.compareSync(password, user.passHash);
 
        if(flag){
