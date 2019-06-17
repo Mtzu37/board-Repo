@@ -28,13 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       linkBanner: {
         type: DataTypes.STRING,
       },
-      link1: {
-        type: DataTypes.STRING,
-      },
-      link2: {
-        type: DataTypes.STRING,
-      },
-      link3: {
+      linkVideo: {
         type: DataTypes.STRING,
       },
       text: {
