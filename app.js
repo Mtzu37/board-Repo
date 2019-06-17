@@ -31,9 +31,10 @@ Lumie.load(app, {
   controllers_path: path.join(__dirname, 'controllers')
 })
 
-sequelize.sync() // { force: true } - To reset DB insert this inside the parenthesis
+sequelize.sync({force:true}) // { force: true } - To reset DB insert this inside the parenthesis
   .then(() => {
     app.listen(PORT, () => {
+
       console.log(`Server listening on port ${PORT}`)
     })
   })
