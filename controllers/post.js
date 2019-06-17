@@ -50,7 +50,7 @@ const {
       ]
 
     }).then(user => {
-      let flag = false;
+      var flag = false;
       console.log("USER", user);
       if(user !== null && user !== undefined ){
         flag = bcrypt.compareSync(password, user.passHash);
@@ -65,9 +65,7 @@ const {
             res.status(400).send("failed login");
        }
     }) .catch( err=> {
-        res.status(400).json({
-          error: err
-        })
+        res.status(400).send("failed login");
       });
   }
   
