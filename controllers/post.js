@@ -51,8 +51,13 @@ const {
 
     }).then(user => {
       let flag = false;
-      if(user !== null && user !== undefined )
+      console.log("USER", user);
+      if(user !== null && user !== undefined ){
         flag = bcrypt.compareSync(password, user.passHash);
+
+      } else {
+        res.status(400).send("failed login");
+      }
 
        if(flag){
             res.status(200).send({id: user.id});
